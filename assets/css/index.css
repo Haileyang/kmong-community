@@ -424,11 +424,18 @@ main {
 /* 1:1문의 영역 */
 .live-chatting-wrap{width: 370px; padding: 20px 20px 70px 20px;
   border-radius: 5px; border: 1px solid #D9A02C; box-shadow: 0 -5px 14px rgba(217, 160, 44, 0.19);
-  position: fixed; right: 100px; bottom: 30px; z-index: 100;
+  position: fixed; right: 20px; bottom: 30px; z-index: 100;
   background-color: #1c1c1c;
+  overflow: hidden;
+  display: none;
+}
+.live-chatting-wrap.on{
+  display: block;
 }
 /* 1:1문의 프로필 이미지 */
-.chatting-profile{display: flex; display: -ms-flexbox;}
+.chatting-profile{display: flex; display: -ms-flexbox;
+  align-items: center;
+}
 .live-chatting-wrap figure{display: flex; display: -ms-flexbox; width: 40px; height: 40px;
   align-items: center; -ms-flex-item-align: center; justify-content: center; -ms-flex-pack: center;
   border-radius: 100%;
@@ -440,24 +447,79 @@ main {
   border-bottom: 1px solid #666666;
 }
 .chatting-profile figure{margin: 0 15px 0 0;}
-.chatting-profile.on figure::after {content: ""; width: 10px; height: 10px;
+.chatting-profile.on figure::after {content: ""; 
+  width: 13px;
+  height: 13px;
   border-radius: 100%; border: 3px solid #1C1C1C;
   position: absolute; right: 0; bottom: 0;
   background-color: #4ECD00;
 }
 .chatting-profile.off{}
 .chatting-profile div{}
+
+/* file */
+.live-chatting .file .file-wrap{
+    padding: 20px 12px 15px 15px;
+    border-radius: 5px;
+    max-width: 225px;
+    background-color: #2B2B2B;
+
+}
+.live-chatting .file .file-content{
+  display: block;
+  position: relative;
+}
+.live-chatting .file-content::after{
+  content:"";
+  width: 40px;height: 40px;
+  background: url(/assets/img/icon-download.png) no-repeat center / 40px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  right: 0; top: 0;
+  margin-left: 40px;
+}
+.live-chatting .file-content dt{
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 10px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.live-chatting .file-content dd{
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 0;
+  line-height: 1;
+}
+.live-chatting .file-content dd + dd{
+  margin-top: 3px;
+}
+.live-chatting .file-content .file-open{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.live-chatting .file-open span{
+  font-size: 14px; 
+  color: #fff;
+  text-decoration: underline;
+  margin-right: 10px;
+}
 /* 1:1문의 상단 상단 이름 */
 .chatting-profile strong{color: #D9A02C; font-size: 16px;}
 /* 1:1문의 상단 상단 활동 */
 .chatting-profile p{font-size: 12px; margin-bottom: 0;}
 .chatting-profile p.off{color: #888888;}
-.chatting-profile p.on{color: #4ECD00;}
+.chatting-profile p.on{color: #4ECD00;
+  line-height: 1;
+}
 /* 1:1문의 닫기 */
-.live-chatting-top .exit{display: block; width: 13px; height: 13px;
+.live-chatting-top .exit{display: block; width: 15px; height: 15px;
   position: absolute; right: 0; top: 0;
   text-indent: -9999px; font-size: 0;
-  background: url(../img/exit.png);
+  background: url(../img/exit.png) no-repeat center/ 15px;
 }
 
 .live-chatting-top .exit::before{
@@ -473,7 +535,9 @@ main {
   border-bottom: 1px solid #666;
   text-align: center;
 }
-.chatting-admin li{width: 25%; color: #666666; position: relative; font-weight: 500; line-height: 30px; height: 30px;}
+.chatting-admin li{width: 25%; color: #666666; position: relative; font-weight: 500; line-height: 30px; height: 30px;
+  font-size: 14px;
+}
 .chatting-admin li.on{color: #D9A02C; 
   border-top: 1px solid #D9A02C; border-left: 1px solid #D9A02C; border-right: 1px solid #D9A02C;
 }
@@ -483,20 +547,10 @@ main {
 
 /* 1:1문의 내용 */
 .live-chatting-list{height: 450px; overflow: hidden; overflow-y: auto;}
-/* width */
 .live-chatting-list::-webkit-scrollbar {
-  width: 5px;
+  display: none;
 }
 
-/* Track */
-.live-chatting-list::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0);
-}
-
-/* Handle */
-.live-chatting-list::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.1);  border-radius: 5px;
-}
 /* 1:1문의 내용 박스 */
 .live-chatting-list li{display: flex; display: -ms-flexbox; align-items: flex-end; margin-bottom: 25px;}
 .live-chatting-list li.chat-admin{justify-content: flex-start;}
@@ -506,6 +560,7 @@ main {
 /* 실시간 문의 내용 */
 .live-chatting p{padding: 8px 12px; position: relative;
   border-radius: 5px; background-color: #2B2B2B; color: #fff; font-size: 14px; line-height: 20px; font-weight: 400;
+  margin-bottom: 5px;
 }
 /* 실시간 문의 감싸기 영역 */
 .live-chatting div{display: inline;}
@@ -524,16 +579,18 @@ main {
   font-size: 12px; font-style: normal;
 }
 
-.live-chatting-list li.chat-admin .live-chatting div{justify-content: flex-start;}
-.live-chatting-list li.chat-user .live-chatting div{justify-content: flex-end;}
+.live-chatting-list li.chat-admin .live-chatting>div{justify-content: flex-start;}
+.live-chatting-list li.chat-user .live-chatting>div{justify-content: flex-end;}
 .live-chatting-list li.chat-admin .last em{margin-left: 5px;}
-.live-chatting-list li.chat-user .last em{margin-right: 5px;}
+.live-chatting-list li.chat-user .last em{margin-right: 5px;
+  text-align: right;
+}
 .live-chatting-list li.chat-admin .live-chatting p::after{right: -10px;}
 .live-chatting-list li.chat-user .live-chatting p::after{left: -10px;}
 
 /* 1:1문의 하단 입력 */
 .live-chatting-write{position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 0);
-  display: flex; width: 100%; padding: 10px 20px;
+  display: flex; width: 100%; padding: 10px 10px;
   background-color: #2B2B2B;
   align-items: center;
 }
@@ -544,6 +601,7 @@ main {
   border-radius: 5px;
   background-color: #CCCCCC;
   border: 0;
+  font-size: 14px;
 }
 input::-webkit-input-placeholder {
   color: #1c1c1c;
