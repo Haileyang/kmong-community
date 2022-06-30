@@ -284,6 +284,7 @@ main {
   height: 307px;
   display: flex;
   flex-direction: column-reverse;
+  margin-top: 20px;
   /* width */
   /* Track */
   /* Handle */
@@ -506,6 +507,7 @@ main {
   color: #fff;
   text-decoration: underline;
   margin-right: 10px;
+  cursor: pointer;
 }
 /* 1:1문의 상단 상단 이름 */
 .chatting-profile strong{color: #D9A02C; font-size: 16px;}
@@ -531,9 +533,10 @@ main {
 .hidden{display: none;}
 
 /* 1:1문의 관리자1,2,3 */
-.chatting-admin{display: flex; display: -ms-flexbox; width: 100%; padding-left: 0; margin-bottom: 20px;
+.chatting-admin{display: flex; display: -ms-flexbox; width: 100%; padding-left: 0; margin-bottom: 0;
   border-bottom: 1px solid #666;
   text-align: center;
+
 }
 .chatting-admin li{width: 25%; color: #666666; position: relative; font-weight: 500; line-height: 30px; height: 30px;
   font-size: 14px;
@@ -602,6 +605,7 @@ main {
   background-color: #CCCCCC;
   border: 0;
   font-size: 14px;
+  outline: none;
 }
 input::-webkit-input-placeholder {
   color: #1c1c1c;
