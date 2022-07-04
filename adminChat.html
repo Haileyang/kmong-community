@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMMUNITY - Admin Chaat</title>
+
+    <script defer src="./assets/js/jquery.js" type="text/javascript"></script>
+    <script src="./assets/js/main.js" type="text/javascript"></script>
+    <script src="./assets/js/includeHTML.js"></script> <!-- html include script -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- swiper script -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+        integrity="sha384-OX60W5no62t3a7IWb/778scS02RmUVFiMWgxiaEMwIlqYjLONUVz9xqTGVWlyiFH" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+
+</head>
+
+<body>
+    <div id="wrap" class="heigh100vh">
+        <header class="theme-header">
+            <div class="theme-header-inner">
+                <h1 class="theme-logo">
+                    <img alt="로고" src="./assets/img/logo.svg" />
+                </h1>
+
+                <ul class="header-menu-list">
+                    <li class="header-menu-item">
+                        <a href="" class="header-menu-link">구매이력</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <!-- TODO 새로운 메세지 알림 시 클래스 new 추가 -->
+                        <a href="" class="header-menu-link new">메세지</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="" class="header-menu-link">잔액 100G</a>
+                    </li>
+                    <li class="header-menu-item">
+                        <a href="" class="header-menu-link">
+                            <span class="header-menu-user-name"> USERID님</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="theme-content-inner pd-none">
+            <div class="theme-content-flex-wrap flex-start">
+                <div class="theme-content-col col-side pd-none">
+                    <div class="chat-side-bar">
+                        <div class="side-bar-top">
+                            <h2>ADMIN CHAT LISTS</h2>
+                            <div class="search-wrap">
+                                <input type="text" placeholder="Search...">
+                                <figure class="icon-search"><img src="/assets/img/icon-search.png" alt="검색 아이콘">
+                                </figure>
+                            </div>
+                        </div>
+                        <ul class="side-bar-lists">
+                            <li class="side-bar-list on">
+                                <figure class="img-user on"><img src="/assets/img/user-profile-default.png"
+                                        alt="profile"></figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user on"><img src="/assets/img/user-profile-default.png"
+                                        alt="profile"></figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                        <span class="chat-number hidden">2</span>
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                        <span class="chat-number">2</span>
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">yesterday</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name Name Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                            <li class="side-bar-list">
+                                <figure class="img-user"><img src="/assets/img/user-profile-default.png" alt="profile">
+                                </figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dd class="user-chat-summary">
+                                        This is sample chatting message message
+                                    </dd>
+                                    <dd class="user-chat-time">7: 41 AM</dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="theme-content-col col-100 pd-none">
+                    <div class="chat-main-wrap">
+                        <div class="chat-main-top">
+                            <div class="chatting-profile">
+                                <figure class="img-user on"><img src="/assets/img/user-profile-default.png"
+                                        alt="profile"></figure>
+                                <dl>
+                                    <dt class="user-name">User Name</dt>
+                                    <dt class="user-status on">활동 중</dt>
+                                </dl>
+                            </div>
+                            <ul class="chat-top-icons">
+                                <li class="chat-top-icon">
+                                    <div class="search-wrap">
+                                        <figure class="icon-search" onclick="searchExpand(event)">
+                                            <img src="/assets/img/icon-search-grey.png" alt="search">
+                                        </figure>
+                                        <input type="text" placeholder="Search...">
+                                    </div>
+                                </li>
+                                <li class="chat-top-icon more-trigger">
+                                    <figure class="icon-more"><img src="/assets/img/icon-more.png" alt="more"></figure>
+                                    <ul class="more-open-lists more-open">
+                                        <li class="more-open-list">
+                                            <figure><img src="/assets/img/icon-excla.png" alt="View Info"></figure>
+                                            View Info
+                                        </li>
+                                        <li class="more-open-list">
+                                            <figure><img src="/assets/img/icon-trash.png" alt="Delete"></figure>
+                                            Delete
+                                        </li>
+                                        <li class="more-open-list red">
+                                            <figure><img src="/assets/img/icon-block.png" alt="Block"></figure>
+                                            Block
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat-content-wrap">
+                            <!-- 실시간 채팅 내용 -->
+                            <span class="chat-date">
+                                <span>2021.11.09 (목요일)</span>
+                                <span class="bar"></span>
+                            </span>
+                            <ul class="live-chatting-list">
+                                <!-- 사용자 문의 -->
+                                <li class="chat-user">
+                                    <div class="chatting-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                                    </div>
+                                    <div class="live-chatting">
+                                        <span class="visible-none">User Name</span>
+                                        <div class="last">
+                                            <p>미인을 갑 천지는 인간의 수 그와 이것이다. 별과 아니더면, 따뜻한 길을 사랑의 많이 사라지지 
+                                                석가는 부패뿐이다. 얼마나 불어 거선의 하였으며, 희망의 기쁘며, 청춘의 가장 있는가? 
+                                                구하지 품으며, 목숨이 실로 교향악이다. 두손을 천자만홍이 피고,
+                                                구할 석가는 웅대한 새가 이는 청춘의 보라. </p>
+                                            <em>11:30 PM</em>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- 관리자 답변 -->
+                                <li class="chat-admin">
+                                    <div class="chatting-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                                    </div>
+                                    <div class="live-chatting">
+                                        <span>관리자 1</span>
+                                        <div class="last">
+                                            <p>미인을 갑 천지는 인간의 수 그와 이것이다. 별과 아니더면, 따뜻한 길을 사랑의 많이 사라지지 
+                                                석가는 부패뿐이다. 얼마나 불어 거선의 하였으며, 희망의 기쁘며, 청춘의 가장 있는가? 
+                                                구하지 품으며, 목숨이 실로 교향악이다</p>
+                                            <em>11:32 PM</em>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="chat-user">
+                                    <div class="chatting-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                                    </div>
+                                    <div class="live-chatting">
+                                        <span class="visible-none">User Name</span>
+                                        <div>
+                                            <p>안녕하세요 ^^</p>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="last">
+                                            <p>미인을 갑 천지는 인간의 수 그와 이것이다. 별과 아니더면, 따뜻한 길을 사랑의 많이 사라지지 
+                                                석가는 부패뿐이다. 얼마나 불어 거선의 하였으며, 희망의 기쁘며, 청춘의 가장 있는가? 
+                                                구하지 품으며, 목숨이 실로 교향</p>
+                                            <em>11:35 PM</em>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="chat-admin">
+                                    <div class="chatting-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                                    </div>
+                                    <div class="live-chatting">
+                                        <span>관리자 1</span>
+                                        <div>
+                                            <p>안녕하세요 ^^</p>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p>미인을 갑 천지는 인간의 수 그와 이것이다. 별과 아니더면, 따뜻한 길을 사랑의 많이 사라지지 
+                                                석가는 부패뿐이다. 얼마나 불어 거선의 하였으며, 희망의 기쁘며, 청춘의 가장 있는가? 
+                                                구하지 품으며, 목숨이 실로 교향</p>
+                                                <div class="more-wrap">
+                                                    <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                    <ul class="more-open-lists">
+                                                        <li class="more-open-list">
+                                                            <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                            Copy
+                                                        </li>
+                                                        <li class="more-open-list red">
+                                                            <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                            Delete
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        </div>
+                                        <div class="file last">
+                                            <div class="file-wrap">
+                                                <div class="file-content">
+                                                    <dl>
+                                                        <dt>첨부파일_예시+타이틀_2022.06.01.xlsx</dt>
+                                                        <dd>유효기간 : ~ 22. 07. 12</dd>
+                                                        <dd>용량 : 300KB</dd>
+                                                    </dl>
+                                                    <div class="file-open">
+                                                        <span>열기</span>
+                                                        <span>파일 열기</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <em>11:35 PM</em>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="chat-user">
+                                    <div class="chatting-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                                    </div>
+                                    <div class="live-chatting">
+                                        <span class="visible-none">User Name</span>
+                                        <div>
+                                            <p>안녕하세요 ^^</p>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p>게시글 관련 문의드립니다.</p>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="file last">
+                                            <div class="file-wrap">
+                                                <div class="file-content">
+                                                    <dl>
+                                                        <dt>첨부파일_예시+타이틀_2022.06.01.xlsx</dt>
+                                                        <dd>유효기간 : ~ 22. 07. 12</dd>
+                                                        <dd>용량 : 300KB</dd>
+                                                    </dl>
+                                                    <div class="file-open">
+                                                        <span>열기</span>
+                                                        <span>파일 열기</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <em>11:35 PM</em>
+                                            <div class="more-wrap">
+                                                <figure class="more-chat"><img src="/assets/img/icon-more.png" alt=""></figure>
+                                                <ul class="more-open-lists">
+                                                    <li class="more-open-list">
+                                                        <figure><img src="/assets/img/icon-copy.png" alt="Copy"></figure>
+                                                        Copy
+                                                    </li>
+                                                    <li class="more-open-list red">
+                                                        <figure><img src="/assets/img/icon-trash-red.png" alt="Delete"></figure>
+                                                        Delete
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat-main-bottom">
+                            <div class="chat-bottom-left">
+                                <div class="upload-file">
+                                    <figure class="icon-file"><img src="/assets/img/icon-chat-plus.png" alt="file">
+                                    </figure>
+                                    <ul class="more-open-lists">
+                                        <li class="more-open-list">
+                                            <figure><img src="/assets/img/icon-photo.png" alt="Photo"></figure>
+                                            Photo
+                                        </li>
+                                        <li class="more-open-list">
+                                            <figure><img src="/assets/img/icon-file.png" alt="File"></figure>
+                                            File
+                                        </li>
+                                    </ul>
+                                </div>
+                                <input type="text" placeholder="메세지 입력..">
+                            </div>
+                            <div class="send-chat">
+                                <figure class="icon-send"><img src="/assets/img/icon-chat-send.png" alt="send"></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+        function getPhpFunction() {
+
+            alert("plz login");
+
+        }
+
+
+
+        $(function () {
+            var swiper = new Swiper(".main-visual-slide", {
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                },
+            });
+
+
+            /* new board */
+            $(".new-board-tab-list li.new-board-tab-item").click(function () {
+                var target = $(this).attr('data-tab');
+
+                $('.new-board-tab-item').removeClass('active');
+                $(this).addClass('active');
+
+                $('.new-board-tab').removeClass('on');
+                $("#" + target).addClass('on');
+            });
+
+            /* news board */
+            $(".news-board-tab-list li.news-board-tab-item").click(function () {
+                var target = $(this).attr('data-tab');
+
+                $('.news-board-tab-item').removeClass('active');
+                $(this).addClass('active');
+
+                $('.news-board-tab').removeClass('on');
+                $("#" + target).addClass('on');
+            });
+        });
+    </script>
+</body>
+
+</html>
