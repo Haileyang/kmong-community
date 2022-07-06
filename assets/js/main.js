@@ -18,3 +18,18 @@ function searchExpand(event){
     }
 
 }
+function addFileUplooad(){
+    const fileUploadLists = document.querySelector('.file-upload-lists')
+    const fileUploadList = document.createElement('li')
+    fileUploadList.classList.add('file-upload-list')
+    const FileAdd = document.createElement('span')
+    FileAdd.classList.add('add')
+    fileUploadList.append(FileAdd)
+    fileUploadLists.append(fileUploadList)
+}
+function activeReviewInput(){
+    const defaultReviewInput = document.querySelector('.review-input-default')
+    const activeReviewInput = document.querySelector('.review-input-active')
+    activeReviewInput.classList.remove('hidden')
+    defaultReviewInput.classList.add('hidden')
+}

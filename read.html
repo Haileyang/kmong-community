@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMMUNITY - write</title>
+
+    <script defer src="./assets/js/jquery.js" type="text/javascript"></script>
+    <script src="./assets/js/main.js" type="text/javascript"></script>
+    <script src="./assets/js/includeHTML.js"></script> <!-- html include script -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- swiper script -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" integrity="sha384-OX60W5no62t3a7IWb/778scS02RmUVFiMWgxiaEMwIlqYjLONUVz9xqTGVWlyiFH" crossorigin="anonymous"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/sub.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+
+</head>
+<body>
+  <div id="wrap">
+    <header class="theme-header">
+      <div class="theme-header-inner">
+        <h1 class="theme-logo">
+          <img alt="로고" src="./assets/img/logo.svg" />
+        </h1>
+
+        <ul class="header-menu-list">
+          <li class="header-menu-item">
+            <a href="" class="header-menu-link">구매이력</a>
+          </li>
+          <li class="header-menu-item">
+            <!-- TODO 새로운 메세지 알림 시 클래스 new 추가 -->
+            <a href="" class="header-menu-link new">메세지</a>
+          </li>
+          <li class="header-menu-item">
+            <a href="" class="header-menu-link">잔액 100G</a>
+          </li>
+          <li class="header-menu-item">
+            <a href="" class="header-menu-link">
+              <span class="header-menu-user-name"> USERID님</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="theme-content-inner">
+      <div class="theme-content-flex-wrap">
+        <div class="theme-content-col col-side">
+          <div class="chatting-list-wrap">
+            <span class="chatting-list-head">채팅방 연결중...</span>
+            <div class="live-chatting-box">
+              <!-- TODO KBU 바로가기 링크 버튼 -->
+              <a href="https://www.naver.com/" class="live-chatting-link">바로가기 ></a>
+
+              <!-- TODO 채팅 리스트 -->
+              <div class="live-chatting-list-wrap" >
+                <ul  class="live-chatting-list" id = "ul123">
+                </ul>
+              </div>
+            </div>
+
+            <!-- TODO 채팅 입력하는 곳 -->
+            <div class="live-chatting-input-box">
+              <!-- TODO 채팅 입력 input box / 비로그인 시 placeholder 나타나며 read-only 로 변경 -->
+              <input type="text" class="chatting-input" placeholder="로그인 후 채팅을 이용하실 수 있습니다.">
+              <!-- TODO 비로그인 시 "로그인" 으로 텍스트 변경 -->
+              <button type="button"onclick="getPhpFunction();" class="chatting-export-btn">전송</button>
+            </div>
+          </div>
+
+          <!-- TODO 광고영상 영역 -->
+          <div class="advertisement-video">
+            광고영상
+          </div>
+
+          <!-- TODO 새로운 게시글 & 새로운 댓글 -->
+          <div class="new-board-tab-wrap">
+            <ul class="new-board-tab-list">
+              <!-- 활성화 시 클래스 active 추가 -->
+              <li class="new-board-tab-item active" data-tab="new_board">새로운 게시판</li>
+              <li class="new-board-tab-item" data-tab="new_comment">새로운 댓글</li>
+            </ul>
+
+            <!-- TODO 게시판 게시글 최대 3개 노출 -->
+            <div class="new-board-tab on" id="new_board">
+              <ul class="board-list">
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 게시글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 게시글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 게시글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- TODO 댓글 게시판 최대 3개 노출 -->
+            <div class="new-board-tab" id="new_comment">
+              <ul class="board-list">
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 댓글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 댓글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="board-item-title">새로운 댓글 입니다.</h3>
+                    <span class="board-item-date">2022.05.31</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="theme-content-col col-center">
+            <div class="product-read-wrap">
+                <div class="product-read-top">
+                    <h1 class="product-read-tit">
+                        안전거래 제목 예시입니다.
+                        <span class="produce-read-date">2022. 06. 01</span>
+                        <span class="produce-read-view">조회수 : 5</span>
+                    </h1>
+                    <span class="fill-btn">거래하기</span>
+                </div>
+                <div class="product-read-content">
+                    <p>
+                        그들에게 방지하는 장식하는 작고 같은 때까지 것이다. 황금시대를 우리의 같은 것이다. 이것을 인간이 인생에 그들의 얼음이 청춘에서만 낙원을 바로 아름다우냐? 웅대한 이 찾아다녀도, 봄바람이다. 충분히 얼음이 봄날의 것이다.보라, 힘차게 목숨이 평화스러운 그리하였는가? 인생의 관현악이며, 옷을 그리하였는가? 무엇을 끓는 간에 그들의 어디 되려니와, 말이다. 위하여, 장식하는 않는 시들어 대한 이상이 밝은 그리하였는가? 고동을 인생에 그것은 불러 듣기만 듣는다. 곳이 이것이야말로 보배를 청춘의 갑 인간이 동력은 있다. 속에서 인간의 커다란 이상 눈이 귀는 원대하고, 남는 황금시대의 이것이다.
+                    </p>
+                    <p>
+                        전인 청춘은 대고, 소금이라 동산에는 것은 불어 약동하다. 대한 불어 길을 이것은 위하여서. 작고 간에 고행을 기관과 있는 봄바람이다. 눈이 무엇을 우리 바로 피고, 얼음이 불러 무한한 이것을 칼이다. 이상 인생의 구하지 있는가? 있을 새 인도하겠다는 얼마나 보는 눈에 아름다우냐? 것이다.보라, 풀이 자신과 두기 이상의 위하여 운다. 그림자는 굳세게 영락과 봄바람이다. 피가 피에 할지니, 것이다.
+                    </p>
+                    <p>
+                        설산에서 인간은 인생을 과실이 보는 만천하의 낙원을 위하여서, 사막이다. 가치를 이상 구하기 찾아 대한 거친 우리 무엇을 말이다. 위하여 사랑의 미인을 목숨을 얼마나 가장 원질이 실로 있다. 없으면, 없으면 싶이 사막이다. 따뜻한 위하여, 타오르고 있다. 꽃 천고에 풀이 옷을 놀이 열락의 가는 위하여서. 발휘하기 원대하고, 품에 사라지지 트고, 위하여 설레는 이것이다. 이 살 너의 청춘이 물방아 천하를 트고, 별과 있다. 바이며, 인생의 곧 실현에 힘있다.
+                    </p>
+                </div>
+                <div class="product-read-user-profile">
+                    <div class="chatting-profile">
+                        <figure class="img-user on"><img src="/assets/img/user-profile-default.png" alt="profile"></figure>
+                        <dl>
+                            <dt class="user-name">User Name</dt>
+                            <dd class="user-status">연락 가능 시간 : 오전 10시 ~ 오후 8시 / 평균 응답시간 : 2시간</dd>
+                        </dl>
+                    </div>
+                    <ul class="product-user-badges">
+                        <li class="product-user-badge yellow">인증유저</li>
+                        <li class="product-user-badge green">안전거래</li>
+                    </ul>
+                    <ul class="product-user-summarys">
+                        <li class="product-user-summary">
+                            <figure><img src="/assets/img/no-product-img.png" alt=""></figure>
+                            <dl>
+                                <dt>컴플레인</dt>
+                                <dd>0건</dd>
+                            </dl>
+                        </li>
+                        <li class="product-user-summary">
+                            <figure><img src="/assets/img/no-product-img.png" alt=""></figure>
+                            <dl>
+                                <dt>만족도</dt>
+                                <dd>90%</dd>
+                            </dl>
+                        </li>
+                        <li class="product-user-summary">
+                            <figure><img src="/assets/img/no-product-img.png" alt=""></figure>
+                            <dl>
+                                <dt>총 안전거래 개수</dt>
+                                <dd>0건</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-read-service">
+                    <h2>서비스 평가</h2>
+                    <div class="overall-rating">
+                        <ul class="stars">
+                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                        </ul>
+                        <div class="overall-nums">
+                            <span class="current-num">3.0</span>
+                            /
+                            <span class="overall-num">5.0</span>
+                        </div>
+                    </div>
+                    <div class="review-input-wrap">
+                        <div class="review-input-default" onclick="activeReviewInput()">
+                            <input type="text" placeholder="리뷰를 작성해주세요.">
+                        </div>
+                        <div class="review-input-active hidden">
+                            <div class="reviewer">
+                                <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                <strong>User Name</strong>
+                            </div>
+                            <div class="reviewer-star">
+                                <h3>상품은 어떠셨나요?</h3>
+                                <div class="review-star-rating">
+                                    <ul class="stars">
+                                        <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                        <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                        <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                        <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                    </ul>
+                                    <div class="reviewer-num">3.0</div>
+                                </div>
+                            </div>
+                            <div class="reviewer-comment">
+                                <textarea name="" id="" cols="30" rows="10">건전한 토론문화과 양질의 댓글 문화를 위해,타인에게 불쾌감을 주는 욕설 또는 특정 계층/ 민족, 종교 등을 비하하는 단어들은 표시가 제한됩니다.</textarea>
+                                <span class="reviewer-comment-count">
+                                    <span class="current-num">0</span> / <span class="total-num">300</span>
+                                </span>
+                                <button class="fill-btn">등록</button>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="review-comment-wrap">
+                        <ul class="review-filters">
+                            <li class="review-filter">베스트순</li>
+                            <li class="review-filter">최신순</li>
+                        </ul>
+                        <ul class="review-lists">
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                            <li class="review-list">
+                                <div class="review-list-left">
+                                    <div class="star-rating">
+                                        <ul class="stars">
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-fill.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                            <li class="star"><figure><img src="/assets/img/star-empty.png" alt=""></figure></li>
+                                        </ul>
+                                        <span class="current-num">3.0</span>
+                                    </div>
+                                    <div class="reviewer-profile">
+                                        <figure><img src="/assets/img/user-profile-default.png" alt=""></figure>
+                                        <dl>
+                                            <dt>김*원</dt>
+                                            <dd>2021. 12. 31 16:08</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="review-comment">
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요
+                                    흠~~ 제품에 아주 만족합니다. 이렇게 댓글을 남겨요. 흠~~ 제품에 아주 만족합니다.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="theme-content-col col-side">
+          <!-- TODO 광고 배너 4개 -->
+          <div class="advertisement-banner-wrap">
+            <ul class="advertisement-list">
+              <li class="advertisement-item">
+                <a href="" class="advertisement-link">
+                  <img src="./assets/img/main-banner.png" alt="광고배너">
+                </a>
+              </li>
+
+              <li class="advertisement-item">
+                <a href="" class="advertisement-link">
+                  <img src="./assets/img/main-banner.png" alt="광고배너">
+                </a>
+              </li>
+
+              <li class="advertisement-item">
+                <a href="" class="advertisement-link">
+                  <img src="./assets/img/main-banner.png" alt="광고배너">
+                </a>
+              </li>
+
+              <li class="advertisement-item">
+                <a href="" class="advertisement-link">
+                  <img src="./assets/img/main-banner.png" alt="광고배너">
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="news-board-tab-wrap">
+            <ul class="news-board-tab-list">
+              <!-- 활성화 시 클래스 active 추가 -->
+              <li class="news-board-tab-item active" data-tab="hot_news">HOT NEWS</li>
+              <li class="news-board-tab-item" data-tab="gram_news">NEWS</li>
+            </ul>
+
+            <!-- TODO 게시판 게시글 최대 5개 노출 -->
+            <div class="news-board-tab on" id="hot_news">
+              <ul class="board-list">
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- TODO 댓글 게시판 최대 5개 노출 -->
+            <div class="news-board-tab" id="gram_news">
+              <ul class="board-list">
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+
+                <li class="board-item">
+                  <a href="" class="board-link">
+                    <h3 class="news-board-title">뉴스레터 공지사항 글입니다.</h3>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- TODO 결제정보 -->
+          <div class="payment-list-wrap">
+            <span class="payment-list-head">결제 정보</span>
+            <div class="payment-list-box">
+              <ul class="payment-list">
+                <!-- TODO 결제상품 아이템 -->
+                <li class="payment-item">
+                  <!-- TODO 결제 상품 이미지 -->
+                  <img src="./assets/img/main-banner.png" alt="결제 상품 이미지">
+                  <div class="payment-item-info">
+                    <!-- TODO 결제 상품명 -->
+                    <h3 class="payment-item-title">상품명이 입력되는 곳입니다. </h3>
+                    <!-- TODO 결제 상품 가격 -->
+                    <span class="payment-item-price">54,800원</span>
+                  </div>
+                  <button class="payment-delete-btn" type="button">
+                    <img src="./assets/img/delete-btn.svg" alt="상품 리스트 삭제 버튼">
+                  </button>
+                </li>
+
+                <li class="payment-item">
+                  <!-- TODO 결제 상품 이미지 -->
+                  <img src="./assets/img/main-banner.png" alt="결제 상품 이미지">
+                  <div class="payment-item-info">
+                    <!-- TODO 결제 상품명 -->
+                    <h3 class="payment-item-title">상품명이 입력되는 곳입니다. </h3>
+                    <!-- TODO 결제 상품 가격 -->
+                    <span class="payment-item-price">54,800원</span>
+                  </div>
+                  <button class="payment-delete-btn" type="button">
+                    <img src="./assets/img/delete-btn.svg" alt="상품 리스트 삭제 버튼">
+                  </button>
+                </li>
+
+                <li class="payment-item">
+                  <!-- TODO 결제 상품 이미지 -->
+                  <img src="./assets/img/main-banner.png" alt="결제 상품 이미지">
+                  <div class="payment-item-info">
+                    <!-- TODO 결제 상품명 -->
+                    <h3 class="payment-item-title">상품명이 입력되는 곳입니다. </h3>
+                    <!-- TODO 결제 상품 가격 -->
+                    <span class="payment-item-price">54,800원</span>
+                  </div>
+                  <button class="payment-delete-btn" type="button">
+                    <img src="./assets/img/delete-btn.svg" alt="상품 리스트 삭제 버튼">
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- TODO 총 결제금액 -->
+            <div class="total-payment-box">
+              <span class="total-payment-text">총 결제금액</span>
+              <span class="total-payment-price">207,500원</span>
+            </div>
+
+            <!-- TODO 결제하기 버튼 / 활성화 시 클래스 active 추가-->
+            <div class="total-payment-btn-box">
+              <button type="button" class="total-payment-btn">구매하기</button>
+            </div>
+          </div>
+
+          <!-- TODO 실시간 채팅 -->
+          <button type="button" class="live-chatting-text-box" onclick="liveChatOpen()">
+            <span class="live-chatting-text-item">1:1 문의</span>
+          </button>
+          <!-- 채팅창 -->
+          <div class="live-chatting-wrap">
+            <!-- 채팅창 상단 -->
+            <div class="live-chatting-top">
+                <div class="chatting-profile on">
+                    <figure><img src="/assets/img/profile.svg" alt="profile"></figure>
+                    <div>
+                        <strong>COMMUNITY</strong>
+                        <p class="">2 분 전 활동</p>
+                        <p class="on">활동 중</p>
+                    </div>
+                </div>
+                <a href="#" class="exit" onclick="liveChatClose()">exit</a>
+            </div>
+            <!-- 관리자 영역 -->
+            <ul class="chatting-admin">
+                <li class="on">관리자 1</li>
+                <li>관리자 2</li>
+                <li>관리자 3</li>
+                <li></li>
+            </ul>
+            <!-- 실시간 채팅 내용 -->
+            <ul class="live-chatting-list">
+              <!-- 사용자 문의 -->
+                <li class="chat-user">
+                    <div class="live-chatting">
+                        <div class="last">
+                            <p>온라인 문의사항 외의 이벤트 관련 문의사항은 각각의 상세 홈페이지에서 문의부탁드립니다.</p>
+                            <em>11:30 PM</em>
+                        </div>
+                    </div>
+                </li>
+                <!-- 관리자 답변 -->
+                <li class="chat-admin">
+                    <div class="chatting-profile">
+                        <figure><img src="/assets/img/profile.svg" alt="profile"></figure>
+                    </div>
+                    <div class="live-chatting">
+                        <span>관리자 1</span>
+                        <div class="last">
+                            <p>안녕하세요! 무엇을 도와드릴까요?</p>
+                            <em>11:32 PM</em>
+                        </div>
+                    </div>
+                </li>
+                <li class="chat-user">
+                    <div class="live-chatting">
+                        <div><p>안녕하세요 ^^</p></div>
+                        <div class="last">
+                            <p>게시글 관련 문의드립니다.</p>
+                            <em>11:35 PM</em>
+                        </div>
+                    </div>
+                </li>
+                <li class="chat-admin">
+                    <div class="chatting-profile">
+                        <figure><img src="/assets/img/profile.svg" alt="profile"></figure>
+                    </div>
+                    <div class="live-chatting">
+                        <span>관리자 1</span>
+                        <div><p>안녕하세요 ^^</p></div>
+                        <div class="last">
+                            <p>어떤 게시글 관련 문의 도와드릴까요?</p>
+                            <em>11:37 PM</em>
+                        </div>
+                    </div>
+                </li>
+                <li class="chat-user">
+                  <div class="live-chatting">
+                      <div><p>안녕하세요 ^^</p></div>
+                      <div>
+                          <p>게시글 관련 문의드립니다.</p>
+                      </div>
+                      <div class="file last">
+                        <div class="file-wrap">
+                            <div class="file-content">
+                              <dl>
+                                <dt>첨부파일_예시+타이틀_2022.06.01.xlsx</dt>
+                                <dd>유효기간 : ~ 22. 07. 12</dd>
+                                <dd>용량 : 300KB</dd>
+                              </dl>
+                              <div class="file-open">
+                                <span>열기</span>
+                                <span>파일 열기</span>
+                              </div>
+                            </div>
+                        </div>
+                        <em>11:35 PM</em>
+                    </div>
+                  </div>
+              </li>
+            </ul>
+            <!-- 문의 영역 하단 입력창 -->
+            <div class="live-chatting-write">
+                <figure><a href="#"><img src="/assets/img/file_add.png" alt="file"></a></figure>
+                <input type="text" name="chat-text" id="chat-text" placeholder="메시지 입력...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+</div>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+
+   function getPhpFunction() {
+
+	 alert("plz login");
+
+    }
+
+
+
+      $(function(){
+        var swiper = new Swiper(".main-visual-slide", {
+          pagination: {
+            el: ".swiper-pagination",
+          },
+          loop:true,
+          autoplay: {
+          delay: 2500,
+        },
+        });
+
+
+        /* new board */
+        $(".new-board-tab-list li.new-board-tab-item").click(function(){
+          var target = $(this).attr('data-tab');
+
+          $('.new-board-tab-item').removeClass('active');
+          $(this).addClass('active');
+
+          $('.new-board-tab').removeClass('on');
+          $("#" + target).addClass('on');
+        });
+
+        /* news board */
+        $(".news-board-tab-list li.news-board-tab-item").click(function(){
+          var target = $(this).attr('data-tab');
+
+          $('.news-board-tab-item').removeClass('active');
+          $(this).addClass('active');
+
+          $('.news-board-tab').removeClass('on');
+          $("#" + target).addClass('on');
+        });
+      });
+    </script>
+</body>
+</html>
