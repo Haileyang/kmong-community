@@ -5,7 +5,10 @@
 .live-chatting-list{
     padding-top: 20px;
 }
-
+.chat-content-wrap {
+    padding: 0 50px 50px 50px!important;
+    height: auto!important;
+}
 .product-write-tit,
 .product-read-tit{
     font-size: 20px;
