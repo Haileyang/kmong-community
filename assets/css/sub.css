@@ -438,10 +438,18 @@
     display: flex; 
     align-items: center;
 }
+.review-star-rating .current-num{
+    margin-left: 10px;
+}
+.review-star-rating{
+    display: flex;align-items: center;
+    margin-bottom: 20px;
+}
 .review-input-active .reviewer-star h3{
     font-size: 16px;
     color: #fff;
     font-weight: 500;
+    margin-bottom: 20px;
     
 }
 .product-read-service .overall-rating{
@@ -539,8 +547,9 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #aaa;
 }
-.review-comment-wrap .review-list .star img{
-    max-height: 20px;
+.review-comment-wrap .review-list .jq-star{
+   max-height: 20px;
+   max-width: 20px;
 }
 .review-comment-wrap .review-list .star-rating{
     display: flex;
@@ -548,8 +557,7 @@
 }
 .review-comment-wrap .review-list .star-rating .current-num{
     font-weight: 700;
-    margin-top: 5px;
-    margin-left: 5px;
+    margin-left: 10px;
     display: inline-block;
 }
 .review-comment-wrap .review-list-left{margin-right: 50px;}
@@ -580,4 +588,34 @@
     font-weight: 300;
     margin-bottom: 0;
     white-space: nowrap;
+}
+.my-rating-9 path,
+[class^="svg-empty-"]{
+    fill: #ccc!important;
+}
+[class^="svg-active-"],
+[class^="svg-rated-"],
+[class^="svg-hovered-"]{
+    fill :#D9A02C!important
+}
+.emoji-icon{
+    margin-right: 20px;
+}
+.emoji-icon img{
+    max-height: 24px;
+}
+.chat-bottom-right{
+    display: flex;
+    align-items: center;
+}
+#display{
+    font-size: 16px;
+    color: #fff;
+    padding: 0 20px;
+}
+#emojikb-maindiv{
+    bottom: 80px!important;
+}
+#emojikb-searchdiv input::placeholder{
+    color: #aaa;
 }
