@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMMUNITY</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMMUNITY </title>
 
-    <script defer src="./assets/js/jquery.js" type="text/javascript"></script>
-    <script src="./assets/js/main.js" type="text/javascript"></script>
-    <script src="./assets/js/includeHTML.js"></script> <!-- html include script -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script defer src="./assets/js/jquery.js" type="text/javascript"></script>
+  <script src="./assets/js/main.js" type="text/javascript"></script>
+  <script src="./assets/js/includeHTML.js"></script> <!-- html include script -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
-    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- swiper script -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> <!-- swiper script -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" integrity="sha384-OX60W5no62t3a7IWb/778scS02RmUVFiMWgxiaEMwIlqYjLONUVz9xqTGVWlyiFH" crossorigin="anonymous"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/css/sub.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+      integrity="sha384-OX60W5no62t3a7IWb/778scS02RmUVFiMWgxiaEMwIlqYjLONUVz9xqTGVWlyiFH" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/sub.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
+  <!-- emotion -->
+  <script src="./assets/lib/emoji/emoji_keyboard.js"></script>
+  <link rel="stylesheet" href="./assets/lib/emoji/emoji_keyboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 
 </head>
 <body>
@@ -442,7 +453,11 @@
             <!-- 문의 영역 하단 입력창 -->
             <div class="live-chatting-write">
                 <figure><a href="#"><img src="/assets/img/file_add.png" alt="file"></a></figure>
-                <input type="text" name="chat-text" id="chat-text" placeholder="메시지 입력...">
+                <!-- <input type="text" name="chat-text" id="chat-text" placeholder="메시지 입력..."> -->
+                <div id="display">메세지 입력..</div>
+                <div class="emoji-icon" id="emoji-trigger">
+                  <figure><img src="./assets/img/icon-emoji.png" alt="emoji"></figure>
+                </div>
             </div>
           </div>
         </div>
@@ -451,6 +466,34 @@
 </div>
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script>
+  const emojiWrap = document.querySelector('#emojikb-maindiv')
+  const zone = document.getElementById("display");
+  var emojiKeyboard = new EmojiKeyboard;
+
+  /* you can edit a few attributes:
+      - callback: function called when a user clicks on an emoji, with the emoji and a boolean telling if the window got closed
+      - auto_reconstruction: boolean if we should recreate the keyboard when we cannot find it
+      - default_placeholder: placeholder text in the search bar
+      - resizable: boolean if the window can be resized (left side)
+  */
+  emojiKeyboard.callback = (emoji, closed) => {
+      console.info(emoji, closed)
+      if(zone.innerText == '메세지 입력..'){
+          zone.innerText = emoji.emoji;
+      }else{
+          zone.innerText += emoji.emoji;
+      }
+      
+     
+  };
+  emojiKeyboard.resizable = true;
+  // emojiKeyboard.default_placeholder = "";
+  emojiKeyboard.instantiate(document.getElementById("emoji-trigger"))
+
+
+
+</script>
     <script>
 
    function getPhpFunction() {

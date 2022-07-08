@@ -614,8 +614,43 @@
     padding: 0 20px;
 }
 #emojikb-maindiv{
-    bottom: 80px!important;
+    bottom: 95px!important;
+    z-index: 200!important;
+    right: 20px!important;
 }
 #emojikb-searchdiv input::placeholder{
     color: #aaa;
+}
+.live-chatting-write .emoji-icon figure{
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
+.live-chatting-write .emoji-icon {
+    position: absolute; 
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    margin-right: 0;
+}
+#emojikb-searchdiv{
+    border-radius: 5px 5px 0 0!important;
+}
+#emojikb-leftlist{
+    border-radius: 0 0 0 5px!important;
+}
+#emojikb-info{
+    border-radius:0 0 5px!important;
+}
+.live-chatting-write #display {
+    height: 40px;
+    width: calc(100% - 50px);
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: #CCCCCC;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    line-height: 40px;
+    color: #444;
 }
